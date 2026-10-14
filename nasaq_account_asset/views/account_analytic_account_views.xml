@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <!-- LAWYER H1035: no Nasaq view is extended here; the button sits on the fund's analytic account -->
+    <record id="view_account_analytic_account_form_funded_assets" model="ir.ui.view">
+        <field name="name">account.analytic.account.form.funded.assets</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_view_funded_assets" type="object" class="oe_stat_button" icon="inventory_2"
+                        invisible="not funded_asset_count"
+                        groups="account.group_account_invoice,account.group_account_user,account.group_account_manager">
+                    <field name="funded_asset_count" widget="statinfo" string="Assets"/>
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>

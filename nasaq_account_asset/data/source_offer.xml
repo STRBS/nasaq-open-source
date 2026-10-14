@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <!-- LAWYER H1030 condition 2, AGPL-3 section 13: every user of the open-source asset modules
+         over the network is offered their source, prominently, where they use them. -->
+    <record id="action_open_source_components" model="ir.actions.act_url">
+        <field name="name">Source code of the open-source components</field>
+        <field name="url">https://github.com/STRBS/nasaq-open-source</field>
+        <field name="target">new</field>
+    </record>
+    <menuitem id="menu_open_source_components" name="Source code of the open-source components"
+              parent="account_asset_management.menu_finance_assets"
+              action="action_open_source_components" sequence="200"/>
+</odoo>

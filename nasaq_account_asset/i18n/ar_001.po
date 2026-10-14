@@ -1,0 +1,258 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* nasaq_account_asset
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20260925\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-14 07:01+0000\n"
+"PO-Revision-Date: 2026-10-14 07:01+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar_001\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+
+#. module: nasaq_account_asset
+# source: INTENTIONALLY EMPTY
+#: model:ir.module.module,description:base.module_nasaq_account_asset
+msgid ""
+"\n"
+"Nasaq Fixed Assets\n"
+"==================\n"
+"OCA's ``account_asset_management`` is the asset register: assets from vendor\n"
+"bills, the depreciation board, posting, disposal and the Excel register. This\n"
+"module adds the one rule a non-profit needs on top (HAVA H1027/H1028, SOCPA /\n"
+"NCNP 31401001):\n"
+"\n"
+"* **A grant-funded asset is charged to its fund once, at purchase.** The fund\n"
+"  is the restriction, and it is released when the asset is placed in service.\n"
+"  Depreciation and disposal entries carry the programme analytic, never the\n"
+"  Funds plan, so the restricted-fund guard is never asked to pay twice.\n"
+"* The restricted funds are the accounts of one analytic plan, named in the\n"
+"  Accounting settings (*Funds Plan for Assets*); on Nasaq, its Funds plan.\n"
+"* **Funded by** is stored on the asset, taken from the bill line's fund. An\n"
+"  accountant may set it by hand on an asset that has none and no posted\n"
+"  depreciation (the opening register); it may also stay empty.\n"
+"* **Depreciation starts on the 1st of the month after purchase.**\n"
+"* **Billing users read assets.** A Billing clerk's bill is never blocked: the\n"
+"  asset it creates is made in draft, for finance to confirm.\n"
+"* A **Funded by** column and filter, and an **Assets** button on the fund's\n"
+"  analytic account.\n"
+"\n"
+"* **Source code of the open-source components** (Assets menu): the AGPL-3\n"
+"  offer to every user, linking the public repository of the exact code run.\n"
+"\n"
+"Licence: AGPL-3, as the OCA modules it extends.\n"
+msgstr ""
+
+#. module: nasaq_account_asset
+#. odoo-python
+# source: NUKE draft, WRITER confirmed (H1026)
+#: code:addons/nasaq_account_asset/models/account_asset.py:0
+msgid ""
+"%(asset)s is already funded by %(fund)s: the fund that paid for an asset "
+"does not change."
+msgstr ""
+"الأصل %(asset)s مموّل من %(fund)s، والصندوق الذي موّل أصلًا لا يتغيّر."
+
+#. module: nasaq_account_asset
+#. odoo-python
+# source: NUKE draft, WRITER confirmed (H1026)
+#: code:addons/nasaq_account_asset/models/account_asset.py:0
+msgid ""
+"%s already has posted depreciation: set Funded by before the first one."
+msgstr "للأصل %s إهلاك مرحّل، فحدّد «مموّل من» قبل أول قيد إهلاك."
+
+#. module: nasaq_account_asset
+# source: CE: base
+#: model:ir.model,name:nasaq_account_asset.model_ir_access
+msgid "Access"
+msgstr "الوصول"
+
+#. module: nasaq_account_asset
+# source: NUKE draft, WRITER confirmed (H1026)
+#: model_terms:ir.ui.view,arch_db:nasaq_account_asset.res_config_settings_view_form_asset_fund
+msgid ""
+"An asset bought on an account of this analytic plan records it as 'Funded "
+"by'. Its depreciation and disposal entries never carry it, so the fund is "
+"charged once, at purchase."
+msgstr ""
+"إذا اشتُري أصل على حساب من هذه الخطة التحليلية، سُجّل ذلك الحساب في «مموّل "
+"من». ولا تحمله قيود الإهلاك والاستبعاد أبدًا، فيُحمَّل الصندوق مرة واحدة عند"
+" الشراء."
+
+#. module: nasaq_account_asset
+#. odoo-python
+# source: NUKE draft, WRITER confirmed (H1026)
+#: code:addons/nasaq_account_asset/models/account_asset.py:0
+msgid ""
+"An asset is paid by one fund, but this line names %(funds)s. Buy it on one "
+"fund, or split the purchase into one line per fund."
+msgstr ""
+"يُموَّل الأصل من صندوق واحد فقط، لكن هذا البند يحمل %(funds)s. اشترِه على "
+"صندوق واحد، أو قسّم الشراء إلى بنود، بندٍ لكل صندوق."
+
+#. module: nasaq_account_asset
+# source: CE: account
+#: model:ir.model,name:nasaq_account_asset.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "الحساب التحليلي"
+
+#. module: nasaq_account_asset
+# source: OCA: account_asset_management
+#: model:ir.model,name:nasaq_account_asset.model_account_asset
+msgid "Asset"
+msgstr "أصل"
+
+#. module: nasaq_account_asset
+# source: WRITER (H1041, Nasaq-Brand/h1026-ar/ar.po)
+#: model:ir.model,name:nasaq_account_asset.model_account_asset_line
+msgid "Asset depreciation table line"
+msgstr "بند جدول إهلاك الأصل"
+
+#. module: nasaq_account_asset
+# source: OCA: account_asset_management
+#: model_terms:ir.ui.view,arch_db:nasaq_account_asset.view_account_analytic_account_form_funded_assets
+msgid "Assets"
+msgstr "أصول"
+
+#. module: nasaq_account_asset
+# source: OCA: account_asset_management
+#: model:ir.model,name:nasaq_account_asset.model_res_company
+msgid "Company"
+msgstr "الشركة"
+
+#. module: nasaq_account_asset
+# source: CE: account
+#: model:ir.model,name:nasaq_account_asset.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات"
+
+#. module: nasaq_account_asset
+#. odoo-python
+# source: NUKE draft, WRITER confirmed (H1026)
+#: code:addons/nasaq_account_asset/models/account_asset_line.py:0
+msgid "Depreciation %(month)s (posted after lock)"
+msgstr "إهلاك %(month)s (رُحّل بعد تاريخ الإقفال)"
+
+#. module: nasaq_account_asset
+# source: OCA: account_asset_management
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_account_analytic_account__display_name
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_account_asset__display_name
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_account_asset_line__display_name
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_account_move__display_name
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_ir_access__display_name
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_res_company__display_name
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: nasaq_account_asset
+# source: NUKE draft, WRITER confirmed (H1026)
+#: model_terms:ir.ui.view,arch_db:nasaq_account_asset.res_config_settings_view_form_asset_fund
+msgid "Fixed Assets and Restricted Funds"
+msgstr "الأصول الثابتة والصناديق المقيدة"
+
+#. module: nasaq_account_asset
+# source: NUKE draft, WRITER confirmed (H1026)
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_account_analytic_account__funded_asset_count
+msgid "Funded Asset Count"
+msgstr "عدد الأصول المموّلة"
+
+#. module: nasaq_account_asset
+# source: NUKE draft, WRITER confirmed (H1026)
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_account_analytic_account__funded_asset_ids
+msgid "Funded Assets"
+msgstr "الأصول المموّلة"
+
+#. module: nasaq_account_asset
+# source: NUKE draft, WRITER confirmed (H1026)
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_account_asset__source_fund_id
+#: model_terms:ir.ui.view,arch_db:nasaq_account_asset.account_asset_view_search_nasaq
+msgid "Funded by"
+msgstr "مموّل من"
+
+#. module: nasaq_account_asset
+# source: NUKE draft, WRITER confirmed (H1026)
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_account_asset__company_fund_plan_id
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_res_company__asset_fund_plan_id
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_res_config_settings__asset_fund_plan_id
+msgid "Funds Plan for Assets"
+msgstr "خطة الصناديق للأصول"
+
+#. module: nasaq_account_asset
+# source: NUKE draft, WRITER confirmed (H1026)
+#: model_terms:ir.ui.view,arch_db:nasaq_account_asset.res_config_settings_view_form_asset_fund
+msgid "Funds plan for assets"
+msgstr "خطة الصناديق للأصول"
+
+#. module: nasaq_account_asset
+# source: OCA: account_asset_management
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_account_analytic_account__id
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_account_asset__id
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_account_asset_line__id
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_account_move__id
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_ir_access__id
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_res_company__id
+#: model:ir.model.fields,field_description:nasaq_account_asset.field_res_config_settings__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: nasaq_account_asset
+# source: CE: account
+#: model:ir.model,name:nasaq_account_asset.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: nasaq_account_asset
+# source: NUKE draft, WRITER confirmed (H1026)
+#: model:ir.module.module,shortdesc:base.module_nasaq_account_asset
+msgid "Nasaq Fixed Assets"
+msgstr "نسق: الأصول الثابتة"
+
+#. module: nasaq_account_asset
+# source: NUKE draft, WRITER confirmed (H1026)
+#: model:ir.module.module,summary:base.module_nasaq_account_asset
+msgid ""
+"Restricted-fund rule for OCA's asset register: the fund is charged at "
+"purchase, never again by depreciation or disposal"
+msgstr ""
+"قاعدة الصناديق المقيدة لسجل الأصول من OCA: يُحمَّل الصندوق عند الشراء، ولا "
+"يُحمَّل مرة أخرى بالإهلاك أو الاستبعاد"
+
+#. module: nasaq_account_asset
+# source: NUKE draft, WRITER confirmed (H1026)
+#: model:ir.actions.act_url,name:nasaq_account_asset.action_open_source_components
+#: model:ir.ui.menu,name:nasaq_account_asset.menu_open_source_components
+msgid "Source code of the open-source components"
+msgstr "الشيفرة المصدرية للمكونات مفتوحة المصدر"
+
+#. module: nasaq_account_asset
+# source: NUKE draft, WRITER confirmed (H1026)
+#: model:ir.model.fields,help:nasaq_account_asset.field_account_asset__company_fund_plan_id
+#: model:ir.model.fields,help:nasaq_account_asset.field_res_company__asset_fund_plan_id
+#: model:ir.model.fields,help:nasaq_account_asset.field_res_config_settings__asset_fund_plan_id
+msgid ""
+"The analytic plan whose accounts are restricted funds. An asset bought on "
+"one of them records it as 'Funded by', and its depreciation and disposal "
+"entries never carry it: the fund is charged once, at purchase."
+msgstr ""
+"الخطة التحليلية التي حساباتها صناديق مقيدة. إذا اشتُري أصل على أحدها سُجّل "
+"ذلك الحساب في «مموّل من»، ولا تحمله قيود الإهلاك والاستبعاد أبدًا: يُحمَّل "
+"الصندوق مرة واحدة عند الشراء."
+
+#. module: nasaq_account_asset
+# source: NUKE draft, WRITER confirmed (H1026)
+#: model:ir.model.fields,help:nasaq_account_asset.field_account_asset__source_fund_id
+msgid ""
+"The restricted fund that paid for this asset, taken from the bill line. The "
+"fund is charged once, at purchase; depreciation and disposal never charge it"
+" again. It may stay empty for an asset owned before the system."
+msgstr ""
+"الصندوق المقيد الذي موّل هذا الأصل، مأخوذًا من بند الفاتورة. يُحمَّل الصندوق"
+" مرة واحدة عند الشراء، ولا يحمّله الإهلاك أو الاستبعاد مرة أخرى. ويجوز تركه "
+"فارغًا لأصل مملوك قبل النظام."
