@@ -15,7 +15,7 @@ This repository holds **only the open-source components** that run inside **Nasa
 
 | Module | Licence | Source | Changes by STRIDE |
 |---|---|---|---|
-| `account_asset_management` | AGPL-3 | [OCA/account-financial-tools](https://github.com/OCA/account-financial-tools), branch 19.0 @ `ddcabb93373382148826f97bf9935424d03ddea5` | Ported to Odoo 20.0: security moved to `ir.access.csv`, six icon names, versions. Each changed file is marked *Modified by Stride for Odoo 20.0, 2026-10*. Offered back to OCA. |
+| `account_asset_management` | AGPL-3 | [OCA/account-financial-tools](https://github.com/OCA/account-financial-tools), branch 19.0 @ `ddcabb93373382148826f97bf9935424d03ddea5` | Ported to Odoo 20.0: security moved to `ir.access.csv`, six icon names, versions. Each changed file is marked *Modified by Stride for Odoo 20.0, 2026-10*. Added `i18n/ar_001.po`, Stride's Arabic translation (OCA's `ar.po` is unchanged; Odoo loads `ar.po`, then `ar_001.po`). Offered back to OCA. |
 | `report_xlsx` | AGPL-3 | [OCA/reporting-engine](https://github.com/OCA/reporting-engine) pull request #1203 @ `b07289ada619afe1c36cef8df47cfb31794aa3af` | None (OCA's own Odoo 20 migration). |
 | `report_xlsx_helper` | AGPL-3 | [OCA/reporting-engine](https://github.com/OCA/reporting-engine) pull request #1214 @ `c27dd95` | None (OCA's own Odoo 20 migration). |
 | `nasaq_account_asset` | AGPL-3 | STRIDE Business Solutions | Written by STRIDE. Applies the restricted-fund rule to the asset register: an asset bought with a restricted fund is charged to that fund once, at purchase; depreciation and disposal never charge it again. Depends only on `account_asset_management` and Odoo core. |
