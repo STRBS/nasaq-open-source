@@ -26,7 +26,7 @@ The authors and copyright notices of the OCA modules are unchanged. Python libra
 
 | Tag | Date | What it is |
 |---|---|---|
-| *(added at each deployment)* | | |
+| `nasaq-0673cf7` | 2026-10-14 | First deployment: all four modules installed (`account_asset_management` with Stride's Odoo 20.0 port, `report_xlsx`, `report_xlsx_helper`, `nasaq_account_asset` 20.0.1.0.0). The tag points at the commit whose module code was deployed. |
 
 ## Contributing
 
